@@ -75,20 +75,24 @@ echo ""
 
 export HELM_ADD_STRING="helm repo add ${PLUGIN_HELM_CHART_REPO_NAME} ${PLUGIN_HELM_CHART_REPO_URL} ${PLUGIN_CUSTOM_HELM_CHART_REPO_FLAGS}"
 
- echo ""
- echo "Trying to add the chart repository..."
-  echo "$ ${HELM_ADD_STRING}"
- echo ""
+echo ""
+echo "Trying to add the chart repository..."
+echo "$ ${HELM_ADD_STRING}"
+echo ""
 
  $HELM_ADD_STRING
 
 
  export HELM_INSTALLATION_STRING="helm install ${PLUGIN_HELM_CHART_NAME} ${PLUGIN_HELM_CHART} --namespace ${PLUGIN_NAMESPACE} ${PLUGIN_CUSTOM_HELM_CHART_FLAGS}"
 
- echo ""
- echo "Trying to install the chart..."
-  echo "$ ${HELM_INSTALLATION_STRING}"
- echo ""
+
+
+echo ""
+echo "Trying to install the chart..."
+echo "$ ${HELM_INSTALLATION_STRING}"
+echo ""
+
+$HELM_INSTALLATION_STRING
 
 echo ""
 echo "Flow has ended."
