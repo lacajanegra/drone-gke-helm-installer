@@ -1,9 +1,9 @@
-# Easy Drone EKS Deployer
+# Easy Helm chart deployer to Kubernetes (GKE)
 
-`drone-gke-helm-installer` is a [Drone-CI][drone] plugin that allows you to deploy a [Helm][helm] chart into a Kubernetes[k8s]EKS[eks] clusters.
+`drone-gke-helm-installer` is a [Drone-CI][drone] plugin that allows you to deploy a [Helm][helm] chart into a Kubernetes[k8s] GKE[gke] clusters.
 
 [drone]: https://drone.io
-[eks]: https://cloud.google.com/kubernetes-engine
+[gke]: https://cloud.google.com/kubernetes-engine
 [helm]: https://helm.sh
 [k8s]: https://github.com/kubernetes/kubernetes
 
