@@ -12,7 +12,7 @@ if [ -z ${PLUGIN_SERVICE_ACCOUNT} ]; then
 fi
 
 
-if [ -z ${PLUGIN_GKE_POJECT_ID} ]; then
+if [ -z ${PLUGIN_GKE_PROJECT_ID} ]; then
     echo "gke_project_id is missing"
     exit 1
 fi
@@ -60,12 +60,15 @@ if [ -z ${PLUGIN_CUSTOM_HELM_CHART_FLAGS} ]; then
 fi
 
 
+echo ${PLUGIN_SERVICE_ACCOUNT} | tee sa.json
+
+
 echo ""
 echo "Applying GCP configutation..."
 echo ""
 
-$(gcloud auth activate-service-account --key-file=${PLUGIN_SERVICE_ACCOUNT} --project=${PLUGIN_GKE_POJECT_ID})
-$(gcloud container clusters get-credentials ${PLUGIN_GKE_CLUSTER_NAME} --region ${PLUGIN_GKE_REGION}  --project ${PLUGIN_GKE_POJECT_ID})
+$(gcloud auth activate-service-account --key-file=sa.json --project=${PLUGIN_GKE_PROJECT_ID})
+$(gcloud container clusters get-credentials ${PLUGIN_GKE_CLUSTER_NAME} --region ${PLUGIN_GKE_REGION}  --project ${PLUGIN_GKE_PROJECT_ID})
 
 echo ""
 echo "Succesfull EKS cluster connection"

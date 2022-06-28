@@ -25,7 +25,7 @@ steps:
           from_secret: service_account
       gke_project_id: my-project-id
       gke_region: my-project-id # Optional (default: us-central1-a)
-      cluster_name: staging # Required
+      gke_cluster_name: staging # Required
       helm_chart_repo_name: rocketchat # Required
       helm_chart_repo_url: https://rocketchat.github.io/helm-charts # Required
       custom_custom_helm_chart_repo_flags: --force-update # Optional
