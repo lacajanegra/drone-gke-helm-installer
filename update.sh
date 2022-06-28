@@ -7,13 +7,10 @@ echo "Initializing pipeline..."
 
 
 if [ -z ${PLUGIN_SERVICE_ACCOUNT} ]; then
-    export PLUGIN_SERVICE_ACCOUNT="service_account.json"
-fi
-
-if [ -z ${PLUGIN_GKE_POJECT_ID} ]; then
-    echo "gke_project_id is missing"
+    echo "service_account is missing"
     exit 1
 fi
+
 
 if [ -z ${PLUGIN_GKE_POJECT_ID} ]; then
     echo "gke_project_id is missing"
@@ -90,8 +87,6 @@ export HELM_ADD_STRING="helm repo add ${PLUGIN_HELM_CHART_REPO_NAME} ${PLUGIN_HE
  echo "Trying to install the chart..."
   echo "$ ${HELM_INSTALLATION_STRING}"
  echo ""
-
- $HELM_INSTALLATION_STRING
 
 echo ""
 echo "Flow has ended."
