@@ -21,7 +21,8 @@ steps:
   - name: deploy-helm-chart-to-gke
     image: cajanegra/drone-gke-helm-installer
     settings:
-      service_account: # Optional (default: service_account.json)
+      service_account: # Required 
+          from_secret: service_account
       gke_project_id: my-project-id
       gke_region: my-project-id # Optional (default: us-central1-a)
       cluster_name: staging # Required
