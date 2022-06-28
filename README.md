@@ -19,7 +19,7 @@ name: default
 
 steps:
   - name: deploy-helm-chart-to-gke
-    image: cajanegra/drone-gke-helm-installer
+    image: cajanegra/drone-gke-helm-installer:1.0.7
     settings:
       service_account: # Required 
           from_secret: service_account
