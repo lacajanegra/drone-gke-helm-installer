@@ -5,20 +5,6 @@ set -e
 
 echo "Initializing pipeline..."
 
-export PLUGIN_HELM_CHART_REPO_NAME="rocketchat";
-export PLUGIN_HELM_CHART_REPO_URL="https://rocketchat.github.io/helm-charts"
-
-export PLUGIN_HELM_CHART_NAME="my-rocketchat";
-export PLUGIN_HELM_CHART="rocketchat/rocketchat";
-export PLUGIN_NAMESPACE="testrc"
-export PLUGIN_CUSTOM_HELM_CHART_FLAGS="--version 3.0.0 --set mongodb.mongodbPassword=$(echo -n $(openssl rand -base64 32)),mongodb.mongodbRootPassword=$(echo -n $(openssl rand -base64 32)) --create-namespace"
-
-export PLUGIN_SERVICE_ACCOUNT="service_account.json"
-export PLUGIN_GKE_POJECT_ID="x-circle-204800"
-export PLUGIN_GKE_REGION="us-central1-a"
-export PLUGIN_GKE_CLUSTER_NAME="staging"
-
-
 if [ -z ${PLUGIN_SERVICE_ACCOUNT} ]; then
     export PLUGIN_SERVICE_ACCOUNT="service_account.json"
 fi
